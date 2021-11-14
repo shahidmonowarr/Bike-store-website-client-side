@@ -1,0 +1,41 @@
+.booking-page{
+    padding-top: 70px;
+    background-image: url('/src/images/cover2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:200vh ;
+}
+
+.package-info{
+    margin: 70px;
+    border: 1px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 10px;
+    transition: 0.5;
+}
+.package-info:hover{
+    box-shadow: 2px 5px 10px gray;
+}
+
+.shipping-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shipping-form input{
+    display: block;
+    margin-top: 30px;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 350px;
+}
+
+.error{
+    color: red;
+}

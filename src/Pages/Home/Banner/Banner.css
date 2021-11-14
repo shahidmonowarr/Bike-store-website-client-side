@@ -1,0 +1,28 @@
+.banner{
+    background-image: url('/src/images/cover.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:110vh ;
+}
+.banner-title{
+    color:rgb(255, 255, 255);
+    font-size: 75px;
+    font-weight: 800;
+    padding-top: 200px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.banner p{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+@media only screen and (max-width:688px){
+    .banner-title{
+        font-size: 45px;
+    }
+    .banner p{
+        padding: 10px;
+    }
+}
