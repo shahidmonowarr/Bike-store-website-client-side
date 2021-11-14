@@ -9,7 +9,7 @@ const Products = () => {
             .then(data => setPackages(data));
     }, [])
     return (
-        <div className="container" id="packages-page">
+        <div className="container" id="demo-products">
             <h6 className="text-danger fw-bold fs-5 mt-5 "><i class="fas fa-long-arrow-alt-right"></i>EXPLORE GREAT PLACES</h6>
             <h2 className="title">POPULAR PACKAGES</h2>
             <div className="row">

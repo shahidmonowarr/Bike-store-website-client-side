@@ -1,8 +1,11 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import useAuth from '../../../contexts/useAuth';
 
 const Navigation = () => {
+    const { user, logOut } = useAuth()
     return (
         <>
             <Navbar bg="dark" variant="dark" sticky="top" expand="lg">
@@ -10,19 +13,15 @@ const Navigation = () => {
                     <Navbar.Brand className="fs-3 fw-bold" href="#home">Bike Zone</Navbar.Brand>
                     <Navbar.Toggle />
                     <Navbar.Collapse >
-                        {/* <Nav className="ms-auto text-light">
+                        <Nav className="ms-auto text-light">
                             <Nav.Link as={HashLink} to="/home#home">Home</Nav.Link>
-                            <Nav.Link as={HashLink} to="/home#packages-page">Packages</Nav.Link>
-
-
-
-
+                            <Nav.Link as={HashLink} to="/products">Explore</Nav.Link>
                             <Nav.Link as={HashLink} to="/about">About Us</Nav.Link>
                             {user?.email &&
-                                <Nav.Link as={Link} to="/addPackage">Add Package</Nav.Link>
+                                <Nav.Link as={Link} to="/addProducts">Add Product</Nav.Link>
                             }
                             {user?.email &&
-                                <Nav.Link as={Link} to="/managePackages">Manage Package</Nav.Link>
+                                <Nav.Link as={Link} to="/manageProducts">Manage Products</Nav.Link>
                             }
                             {user?.email &&
                                 <Nav.Link as={Link} to="/manageOrders">Manage Orders</Nav.Link>
@@ -37,7 +36,7 @@ const Navigation = () => {
                             <Navbar.Text>
                                 User: <a style={{ textDecoration: "none" }} href="#login"> {user?.displayName}</a>
                             </Navbar.Text>
-                        </Nav> */}
+                        </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

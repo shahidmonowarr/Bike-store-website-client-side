@@ -16,43 +16,51 @@ import AddProducts from './Pages/AddProducts/AddProducts';
 import MyOrder from './Pages/MyOrder/MyOrder';
 import Purchase from './Pages/Purchase/Purchase';
 import ManageProducts from './Pages/ManageProducts/ManageProducts';
+import Login from './Pages/Login/Login/Login';
+import AuthProvider from './contexts/AuthProvider';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Navigation></Navigation>
-        <Switch>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route path="/home">
-            <Home></Home>
-          </Route>
-          <Route path="/explore">
-            <Explore></Explore>
-          </Route>
-          <Route path="/products">
-            <Products></Products>
-          </Route>
-          <Route path="/addProducts">
-            <AddProducts></AddProducts>
-          </Route>
-          <Route path="/purchase/:productId">
-            <Purchase></Purchase>
-          </Route>
-          <Route path="/manageProducts">
-            <ManageProducts></ManageProducts>
-          </Route>
-          <Route path="/myOrder">
-            <MyOrder></MyOrder>
-          </Route>
-          <Route path="/notFound">
-            <NotFound></NotFound>
-          </Route>
-        </Switch>
-        <Footer></Footer>
-      </Router>
+      <AuthProvider>
+        <Router>
+          <Navigation></Navigation>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route path="/home">
+              <Home></Home>
+            </Route>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+            <Route path="/explore">
+              <Explore></Explore>
+            </Route>
+            <Route path="/products">
+              <Products></Products>
+            </Route>
+            <PrivateRoute path="/addProducts">
+              <AddProducts></AddProducts>
+            </PrivateRoute>
+            <PrivateRoute path="/purchase/:productId">
+              <Purchase></Purchase>
+            </PrivateRoute>
+            <PrivateRoute path="/manageProducts">
+              <ManageProducts></ManageProducts>
+            </PrivateRoute>
+            <Route path="/myOrder">
+              <MyOrder></MyOrder>
+            </Route>
+            <Route path="/notFound">
+              <NotFound></NotFound>
+            </Route>
+          </Switch>
+          <Footer></Footer>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }

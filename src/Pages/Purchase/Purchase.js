@@ -44,7 +44,6 @@ const Purchase = () => {
                         <img className="w-50" src={singleProduct.img} alt="" />
                     </div>
                     <h2>{singleProduct.title}</h2>
-                    <h3><i class="fas fa-map-marker-alt"></i> {singleProduct.location}</h3>
                     <p className="fs-5">{singleProduct.description}</p>
                     <h3>Price: {singleProduct.price} <i class="fas fa-dollar-sign"></i></h3>
                 </div>
