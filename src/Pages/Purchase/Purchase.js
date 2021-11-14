@@ -3,12 +3,13 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
+import useAuth from '../../contexts/useAuth';
 
 const Purchase = () => {
     const { productId, } = useParams();
     const [singleProduct, setSingleProduct] = useState({});
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    // const { user } = useAuth();
+    const { user } = useAuth();
 
     const onSubmit = data => {
 
@@ -17,7 +18,7 @@ const Purchase = () => {
 
         console.log(data);
 
-        axios.post('', data)
+        axios.post('http://localhost:5000/orders', data)
             .then(res => {
                 if (res.data.insertedId) {
                     console.log(res.data)
@@ -52,14 +53,13 @@ const Purchase = () => {
             <div className="shipping-section ">
 
                 <form className="shipping-form" onSubmit={handleSubmit(onSubmit)}>
-                    {/* <input defaultValue={user.displayName} {...register("name")} />
+                    <input defaultValue={user.displayName} {...register("name")} />
 
                     <input defaultValue={user.email} placeholder="Email" {...register("email", { required: true })} />
 
-                    {errors.email && <span className="error">This field is required</span>} */}
-
-                    <input placeholder="Price" defaultValue={singleProduct.price} {...register("price")} />
+                    {errors.email && <span className="error">This field is required</span>}
                     <input placeholder="Package Title" defaultValue={singleProduct.title} {...register("title")} />
+                    <input placeholder="Price" defaultValue={singleProduct.price} {...register("price")} />
                     <input placeholder="Address" defaultValue="" {...register("address")} />
 
                     <input placeholder="Phone No." defaultValue="" {...register("phone")} />

@@ -30,11 +30,11 @@ const Navigation = () => {
                                 <Nav.Link as={Link} to="/myOrder">My Order</Nav.Link>
                             }
                             {user?.email ?
-                                <Button onClick={logOut} variant="light" className="mx-3 bg-warning text-white">Logout</Button>
+                                <Button onClick={logOut} variant="light" className="mx-3 bg-black text-white">Logout</Button>
                                 :
                                 <Nav.Link as={Link} to="/login">Login</Nav.Link>}
                             <Navbar.Text>
-                                User: <a style={{ textDecoration: "none" }} href="#login"> {user?.displayName}</a>
+                                <i class="far fa-user"></i> <a style={{ textDecoration: "none" }} href="#login"> {user?.displayName}</a>
                             </Navbar.Text>
                         </Nav>
                     </Navbar.Collapse>

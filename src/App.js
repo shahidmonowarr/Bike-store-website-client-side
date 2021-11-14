@@ -19,6 +19,7 @@ import ManageProducts from './Pages/ManageProducts/ManageProducts';
 import Login from './Pages/Login/Login/Login';
 import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import ManageOrders from './Pages/ManageOrders/ManageOrders';
 
 function App() {
   return (
@@ -50,6 +51,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/manageProducts">
               <ManageProducts></ManageProducts>
+            </PrivateRoute>
+            <PrivateRoute path="/manageOrders">
+              <ManageOrders></ManageOrders>
             </PrivateRoute>
             <Route path="/myOrder">
               <MyOrder></MyOrder>
