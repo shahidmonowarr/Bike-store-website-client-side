@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Table } from 'react-bootstrap';
 
 const ManageProducts = () => {
     const [products, setProducts] = useState([]);
@@ -26,17 +27,30 @@ const ManageProducts = () => {
             })
     }
     return (
-        <div className="manage-Packages ">
-            <h2 className="text-success fw-bold pt-5 pb-3 fs-1">Remove package If Needed</h2>
-            <br />
-            {
-                products.map(singleProduct => <div key={singleProduct._id}>
-                    <div className="package-div my-2 container">
-                        <h3 className="fw-bold fs-4 "><i class="fas fa-hand-holding-heart"></i> {singleProduct.title}</h3>
-                        <button className="bg-warning mx-3" onClick={() => handleDelete(singleProduct._id)}> Remove <i class="fas fa-angle-double-right"></i></button>
-                    </div>
-                </div>)
-            }
+
+
+        <div className=" manage-order" >
+            <div className="container">
+                <h1 className="text-dark fw-bold pt-5 pb-3 fs-1">Manage Product</h1>
+                <Table striped bordered hover variant="dark">
+                    <thead>
+                        <tr className="bg-dark text-white">
+                            <th>Product Name</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            products.map((singleProduct) => (
+                                <tr key={singleProduct._id}>
+                                    <td>{singleProduct.title}</td>
+                                    <td><button className=" mx-3" onClick={() => handleDelete(singleProduct._id)}> <i class="fas fa-trash-alt"></i></button></td>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
+                </Table>
+            </div>
         </div>
     );
 };

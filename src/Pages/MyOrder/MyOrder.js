@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Table } from 'react-bootstrap';
 import useAuth from '../../contexts/useAuth';
 import './MyOrder.css'
 
@@ -36,16 +37,32 @@ const MyOrder = () => {
     }
 
     return (
-        <div className="my-order-page">
-            <h2 className="text-success fw-bold pt-5 pb-3 fs-1">My Order</h2>
-            {
-                orders.map(order => <div className=" my-order m-5 p-3 border-2 rounded-3 bg-success" key={order._id}>
-                    <h1>Title: {order.title}</h1>
-                    <h4>price: {order.price}</h4>
-                    <h6>Order Status: {order.orderStatus}</h6>
-                    <button className="bg-warning mx-3" onClick={() => handleDelete(order._id)}> Remove <i class="fas fa-angle-double-right"></i></button>
-                </div>)
-            }
+        <div className=" manage-order" >
+            <div className="container">
+                <h1 className="text-dark fw-bold pt-5 pb-3 fs-1">My Order</h1>
+                <Table striped bordered hover variant="dark">
+                    <thead>
+                        <tr className="bg-dark text-white">
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Order Status</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            orders.map((order) => (
+                                <tr key={order._id}>
+                                    <td>{order.title}</td>
+                                    <td>{order.price}</td>
+                                    <td>{order.orderStatus}</td>
+                                    <td><button className=" mx-3" onClick={() => handleDelete(order._id)}> <i class="fas fa-trash-alt"></i></button></td>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
+                </Table>
+            </div>
         </div>
     );
 };

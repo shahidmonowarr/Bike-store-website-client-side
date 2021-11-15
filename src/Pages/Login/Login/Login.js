@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../../contexts/useAuth';
 
 const Login = () => {
@@ -11,6 +12,8 @@ const Login = () => {
 
     const { signInUsingGoogle, createUserAccount, userLogin, error } = useAuth();
 
+    const location = useLocation();
+    const history = useHistory();
 
     const handleNameChange = e => {
         setName(e.target.value);
@@ -30,6 +33,10 @@ const Login = () => {
     }
     const handleLogin = () => {
         userLogin(email, password);
+    }
+
+    const handleGoogleSignIn = () => {
+        signInUsingGoogle(location, history);
     }
 
     return (
@@ -90,7 +97,7 @@ const Login = () => {
             <div>
                 <h5 className="fst-italic fw-bold fs-4 text-primary my-3">Or</h5>
                 <h2 className="fs-2 fw-bold text-success py-3">Please Log In With</h2>
-                <button onClick={signInUsingGoogle} className="btn btn-warning mb-3 text-white fw-bold"><i class="fab fa-google text-danger"></i>oogle Sign In</button>
+                <button onClick={handleGoogleSignIn} className="btn btn-warning mb-3 text-white fw-bold"><i class="fab fa-google text-danger"></i>oogle Sign In</button>
             </div>
         </div>
     );
