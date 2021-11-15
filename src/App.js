@@ -20,6 +20,11 @@ import Login from './Pages/Login/Login/Login';
 import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import ManageOrders from './Pages/ManageOrders/ManageOrders';
+import Pay from './Pages/Pay/Pay';
+import Review from './Pages/Review/Review';
+import AddReview from './Pages/AddReview/AddReview';
+import DashBoard from './Pages/DashBoard/DashBoard';
+import MakeAdmin from './Pages/MakeAdmin/MakeAdmin';
 
 function App() {
   return (
@@ -43,22 +48,37 @@ function App() {
             <Route path="/products">
               <Products></Products>
             </Route>
-            <PrivateRoute path="/addProducts">
+            {/* <PrivateRoute path="/addProducts">
               <AddProducts></AddProducts>
-            </PrivateRoute>
+            </PrivateRoute> */}
             <PrivateRoute path="/purchase/:productId">
               <Purchase></Purchase>
             </PrivateRoute>
-            <PrivateRoute path="/manageProducts">
+            {/* <PrivateRoute path="/manageProducts">
               <ManageProducts></ManageProducts>
             </PrivateRoute>
             <PrivateRoute path="/manageOrders">
               <ManageOrders></ManageOrders>
             </PrivateRoute>
-            <Route path="/myOrder">
+            <PrivateRoute path="/makeAdmin">
+              <MakeAdmin></MakeAdmin>
+            </PrivateRoute>
+            <PrivateRoute path="/pay">
+              <Pay></Pay>
+            </PrivateRoute> */}
+            {/* <Route path="/myOrder">
               <MyOrder></MyOrder>
+            </Route> */}
+            <Route path="/review">
+              <Review></Review>
             </Route>
-            <Route path="/notFound">
+            {/* <PrivateRoute path="/addReview">
+              <AddReview></AddReview>
+            </PrivateRoute> */}
+            <PrivateRoute path="/dashboard">
+              <DashBoard></DashBoard>
+            </PrivateRoute>
+            <Route path="*">
               <NotFound></NotFound>
             </Route>
           </Switch>

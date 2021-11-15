@@ -14,7 +14,7 @@ const SingleProduct = ({ singleProduct }) => {
                     <p className="p-2">{description}</p>
                     <h4>Price: {price}<i class="fas fa-dollar-sign"></i></h4>
                     <Link to={`/purchase/${_id}`}>
-                        <button className="btn btn-warning">Purchase Now <i class="fas fa-angle-double-right"></i></button>
+                        <button className="btn btn-warning">Buy Now <i class="fas fa-angle-double-right"></i></button>
                     </Link>
                 </div>
             </div>
