@@ -16,18 +16,8 @@ const Navigation = () => {
                         <Nav className="ms-auto text-light">
                             <Nav.Link as={HashLink} to="/home#home">Home</Nav.Link>
                             <Nav.Link as={HashLink} to="/products">Explore</Nav.Link>
-                            <Nav.Link as={HashLink} to="/about">About Us</Nav.Link>
                             {user?.email &&
-                                <Nav.Link as={Link} to="/addProducts">Add Product</Nav.Link>
-                            }
-                            {user?.email &&
-                                <Nav.Link as={Link} to="/manageProducts">Manage Products</Nav.Link>
-                            }
-                            {user?.email &&
-                                <Nav.Link as={Link} to="/manageOrders">Manage Orders</Nav.Link>
-                            }
-                            {user?.email &&
-                                <Nav.Link as={Link} to="/myOrder">My Order</Nav.Link>
+                                <Nav.Link as={Link} to="/dashboard">DashBoard</Nav.Link>
                             }
                             {user?.email ?
                                 <Button onClick={logOut} variant="light" className="mx-3 bg-black text-white">Logout</Button>

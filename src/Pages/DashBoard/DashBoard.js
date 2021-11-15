@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import {
     BrowserRouter as Router,
     Switch,
@@ -6,6 +7,7 @@ import {
     Link,
     useRouteMatch
 } from "react-router-dom";
+import useAuth from '../../contexts/useAuth';
 import AddProducts from '../AddProducts/AddProducts';
 import AddReview from '../AddReview/AddReview';
 import AdminRoute from '../AdminRoute/AdminRoute';
@@ -16,6 +18,7 @@ import MyOrder from '../MyOrder/MyOrder';
 import Pay from '../Pay/Pay';
 
 const DashBoard = () => {
+    const { user, logOut } = useAuth()
     let { path, url } = useRouteMatch();
     return (
         <div className="container">
@@ -34,6 +37,10 @@ const DashBoard = () => {
                     <Link to={`${url}/makeAdmin`} style={{ textDecoration: "none" }}>Make Admin</Link>
                     <br />
                     <Link to={`${url}/manageProducts`} style={{ textDecoration: "none" }}>Manage Products</Link>
+                    <br />
+                    {user?.email &&
+                        <Link to="" style={{ textDecoration: "none" }} onClick={logOut} >Logout</Link>
+                    }
                 </div>
                 <div className="col-md-10">
 
