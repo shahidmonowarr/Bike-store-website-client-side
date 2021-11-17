@@ -1,3 +1,4 @@
+import { Alert } from 'bootstrap';
 import React, { useState } from 'react';
 
 const MakeAdmin = () => {
@@ -10,27 +11,26 @@ const MakeAdmin = () => {
     }
 
     const handleMakeAdmin = e => {
-        e.preventDefault();
         const user = { email };
 
-        const confirmAdmin = window.confirm('Sure you want to make an Admin?');
-
-        if (confirmAdmin) {
-            fetch(`http://localhost:5000/users/admin`, {
-                method: 'PUT',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(user)
+        fetch(`http://localhost:5000/users/admin`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount) {
+                    setAddAdmin(true);
+                    setEmail('');
+                }
+                console.log(data);
             })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.modifiedCount) {
-                        setAddAdmin(true);
-                        setEmail('');
-                    }
-                })
-        }
+
+        e.preventDefault();
+
     }
     return (
         <div className="container">
@@ -50,11 +50,7 @@ const MakeAdmin = () => {
                     >Make Admin</button>
                 </form>
                 {
-                    addAdmin && <div className="d-flex justify-content-center mt-2">
-                        <div className="alert alert-info w-75" role="alert">
-                            Successfully Added an Admin
-                        </div>
-                    </div>
+                    addAdmin && <div><h6 className="my-3">An Admin Added Successfully</h6></div>
                 }
 
             </div>

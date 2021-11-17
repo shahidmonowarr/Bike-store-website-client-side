@@ -18,7 +18,7 @@ import MyOrder from '../MyOrder/MyOrder';
 import Pay from '../Pay/Pay';
 
 const DashBoard = () => {
-    const { user, logOut } = useAuth()
+    const { user, admin, logOut } = useAuth()
     let { path, url } = useRouteMatch();
     return (
         <div className="container">
@@ -30,14 +30,16 @@ const DashBoard = () => {
                     <br />
                     <Link to={`${url}/addReview`} style={{ textDecoration: "none" }}>Review</Link>
                     <br />
-                    <Link to={`${url}/manageOrders`} style={{ textDecoration: "none" }}>Manage all Orders</Link>
-                    <br />
-                    <Link to={`${url}/addProducts`} style={{ textDecoration: "none" }}>Add Products</Link>
-                    <br />
-                    <Link to={`${url}/makeAdmin`} style={{ textDecoration: "none" }}>Make Admin</Link>
-                    <br />
-                    <Link to={`${url}/manageProducts`} style={{ textDecoration: "none" }}>Manage Products</Link>
-                    <br />
+                    {admin && <div>
+                        <Link to={`${url}/manageOrders`} style={{ textDecoration: "none" }}>Manage all Orders</Link>
+                        <br />
+                        <Link to={`${url}/addProducts`} style={{ textDecoration: "none" }}>Add Products</Link>
+                        <br />
+                        <Link to={`${url}/makeAdmin`} style={{ textDecoration: "none" }}>Make Admin</Link>
+                        <br />
+                        <Link to={`${url}/manageProducts`} style={{ textDecoration: "none" }}>Manage Products</Link>
+                        <br />
+                    </div>}
                     {user?.email &&
                         <Link to="" style={{ textDecoration: "none" }} onClick={logOut} >Logout</Link>
                     }
