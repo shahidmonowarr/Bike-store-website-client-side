@@ -4,7 +4,7 @@ import { Redirect, Route } from 'react-router';
 import useAuth from '../../contexts/useAuth';
 
 const AdminRoute = ({ children, ...rest }) => {
-    const { user, isLoading } = useAuth();
+    const { user, admin, isLoading } = useAuth();
     if (isLoading) {
         return <Spinner animation="border" variant="success" />
     }
@@ -12,14 +12,15 @@ const AdminRoute = ({ children, ...rest }) => {
     return (
         <Route
             {...rest}
-            render={({ location }) => user.email ? children
+            render={({ location }) => user.email && admin ? (children)
                 :
-                <Redirect
+                (<Redirect
                     to={{
-                        pathname: "/login",
+                        pathname: "/",
                         state: { from: location }
                     }}>
-                </Redirect>}
+                </Redirect>)
+            }
         >
 
         </Route>
