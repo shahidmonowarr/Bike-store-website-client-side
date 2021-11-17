@@ -29,10 +29,10 @@ const Login = () => {
 
     // const auth = getAuth();
     const handleRegistration = () => {
-        createUserAccount(name, email, password);
+        createUserAccount(name, email, password, location, history);
     }
     const handleLogin = () => {
-        userLogin(email, password);
+        userLogin(email, password, location, history);
     }
 
     const handleGoogleSignIn = () => {

@@ -6,7 +6,6 @@ import {
   Link
 } from "react-router-dom";
 import Home from './Pages/Home/Home/Home';
-import Explore from './Pages/Explore/Explore';
 import Footer from './Pages/Shared/Footer/Footer';
 import Navigation from './Pages/Shared/Navigation/Navigation';
 import Products from './Pages/Products/Products';
@@ -17,6 +16,7 @@ import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Review from './Pages/Review/Review';
 import DashBoard from './Pages/DashBoard/DashBoard';
+import Brands from './Pages/Brands/Brands';
 
 function App() {
   return (
@@ -34,11 +34,11 @@ function App() {
             <Route path="/login">
               <Login></Login>
             </Route>
-            <Route path="/explore">
-              <Explore></Explore>
-            </Route>
             <Route path="/products">
               <Products></Products>
+            </Route>
+            <Route path="/brands">
+              <Brands></Brands>
             </Route>
             <PrivateRoute path="/purchase/:productId">
               <Purchase></Purchase>

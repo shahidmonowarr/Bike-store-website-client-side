@@ -11,7 +11,7 @@ const MyOrder = () => {
         fetch('http://localhost:5000/orders')
             .then(res => res.json())
             .then(data => {
-                const myOrders = data.filter(singleData => singleData.email == user.email);
+                const myOrders = data.filter(singleData => singleData.email === user.email);
                 setOrders(myOrders);
             });
     }, [orders])
@@ -39,7 +39,7 @@ const MyOrder = () => {
     return (
         <div className=" manage-order" >
             <div className="container">
-                <h1 className="text-dark fw-bold pt-5 pb-3 fs-1">My Order</h1>
+                <h1 className=" text-dark fw-bold pt-5 pb-3 fs-1">My Order</h1>
                 <Table striped bordered hover variant="dark">
                     <thead>
                         <tr className="bg-dark text-white">

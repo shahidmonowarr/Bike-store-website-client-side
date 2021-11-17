@@ -1,0 +1,39 @@
+.title{
+    color:rgb(80, 19, 19);
+    font-size: 55px;
+    font-weight: 800;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.offer-section{
+    background-image: url('/src/images/cover2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:110vh ;
+    padding-top: 70px;
+}
+
+.offer-title{
+    color:rgb(211, 192, 192);
+    font-size: 55px;
+    font-weight: 800;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.input-field{
+    border: 3px solid rgb(223, 164, 57);
+    background: transparent;
+    padding: 10px 60px;
+}
+.input-button{
+    color: white;
+    background-color: goldenrod;
+    transition: 0.5s;
+    padding: 14px 10px;
+}

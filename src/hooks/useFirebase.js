@@ -12,12 +12,13 @@ const useFirebase = () => {
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
 
-    const signInUsingGoogle = () => {
+    const signInUsingGoogle = (location, history) => {
         setIsLoading(true);
         signInWithPopup(auth, googleProvider)
             .then(result => {
                 setError('');
-                console.log(result.user);
+                const destination = location?.state?.from || '/';
+                history.replace(destination);
                 setUser(result.user);
             })
             .catch(error => {
@@ -40,13 +41,17 @@ const useFirebase = () => {
         return () => unsubscribed;
     }, []);
 
-    const createUserAccount = (name, email, password) => {
+    const createUserAccount = (name, email, password, location, history) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
                 setError('');
-                window.location.reload();
                 setUserName(name);
+                const destination = location?.state?.from || '/';
+                history.replace(destination);
+                window.location.reload();
                 setUser(user);
+                // //save user to the database
+                // saveUser(email, name);
             })
             .catch(error => {
                 setError(error.message);
@@ -58,14 +63,14 @@ const useFirebase = () => {
             .then(result => { })
     }
 
-    const userLogin = (email, password) => {
-        console.log(email, password);
+    const userLogin = (email, password, location, history) => {
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
                 setError('');
                 setUser(user);
+                const destination = location?.state?.from || '/';
+                history.replace(destination);
                 window.location.reload();
-                console.log(user);
             })
             .catch(error => {
                 setError(error.message);
@@ -78,6 +83,8 @@ const useFirebase = () => {
             .then(() => { })
             .finally(() => setIsLoading(false))
     }
+
+
 
     return {
         user,
