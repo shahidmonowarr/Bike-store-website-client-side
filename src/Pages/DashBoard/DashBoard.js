@@ -24,13 +24,8 @@ const DashBoard = () => {
         <div className="container">
             <div className="row">
                 <div className="col-md-2">
-                    <Link to={`${url}/pay`} style={{ textDecoration: "none" }}>Pay</Link>
-                    <br />
-                    <Link to={`${url}/myOrder`} style={{ textDecoration: "none" }}>My Orders</Link>
-                    <br />
-                    <Link to={`${url}/addReview`} style={{ textDecoration: "none" }}>Review</Link>
-                    <br />
-                    {admin && <div>
+
+                    {admin ? (<div className="my-5">
                         <Link to={`${url}/manageOrders`} style={{ textDecoration: "none" }}>Manage all Orders</Link>
                         <br />
                         <Link to={`${url}/addProducts`} style={{ textDecoration: "none" }}>Add Products</Link>
@@ -39,10 +34,22 @@ const DashBoard = () => {
                         <br />
                         <Link to={`${url}/manageProducts`} style={{ textDecoration: "none" }}>Manage Products</Link>
                         <br />
-                    </div>}
-                    {user?.email &&
-                        <Link to="" style={{ textDecoration: "none" }} onClick={logOut} >Logout</Link>
-                    }
+                        {user?.email &&
+                            <Link to="" className="pb-2" style={{ textDecoration: "none" }} onClick={logOut} >Logout</Link>
+                        }
+                    </div>)
+                        : (<div className="my-5">
+                            <Link to={`${url}/pay`} style={{ textDecoration: "none" }}>Pay</Link>
+                            <br />
+                            <Link to={`${url}/myOrder`} style={{ textDecoration: "none" }}>My Orders</Link>
+                            <br />
+                            <Link to={`${url}/addReview`} style={{ textDecoration: "none" }}>Review</Link>
+                            <br />
+                            {user?.email &&
+                                <Link to="" className="pb-2" style={{ textDecoration: "none" }} onClick={logOut} >Logout</Link>
+                            }
+                        </div>)}
+
                 </div>
                 <div className="col-md-10">
 

@@ -34,9 +34,9 @@ const MakeAdmin = () => {
     }
     return (
         <div className="container">
-            <h3 className="text-center bg-danger text-light my-4 py-2">Make a Admin</h3>
+            <h3 className="text-success my-3 py-2">Make a Admin</h3>
             <div className="text-center mt-5">
-                <form onSubmit={handleMakeAdmin}>
+                <form className="mb-5" onSubmit={handleMakeAdmin}>
                     <input
                         onBlur={handleAdminEmail}
                         className="w-50"
@@ -45,7 +45,7 @@ const MakeAdmin = () => {
                         placeholder="Email"
                     />
                     <button
-                        style={{ background: 'green', color: 'white', outline: 'none', border: 'none', padding: '4px 10px', borderRadius: '5px' }}
+                        className="bg-warning rounded-3"
                         type="submit"
                     >Make Admin</button>
                 </form>

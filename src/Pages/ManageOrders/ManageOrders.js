@@ -9,10 +9,10 @@ const ManageOrders = () => {
         fetch('http://localhost:5000/orders')
             .then(res => res.json())
             .then(data => setOrders(data));
-    }, []);
+    }, [orders]);
 
     const handleConfirm = id => {
-        const matchedOrder = orders.filter(order => order._id == id);
+        const matchedOrder = orders.filter(order => order._id === id);
         matchedOrder[0].orderStatus = 'Confirmed';
 
         fetch(`http://localhost:5000/orders/${id}`, {
@@ -23,7 +23,10 @@ const ManageOrders = () => {
             body: JSON.stringify(matchedOrder)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                console.log(data);
+                alert('order confirmed')
+            })
 
 
         // fetch()
@@ -56,6 +59,7 @@ const ManageOrders = () => {
                 <Table striped bordered hover variant="dark">
                     <thead>
                         <tr className="bg-dark text-white">
+                            <th>Customer Name</th>
                             <th>Product Name</th>
                             <th>Order Status</th>
                             <th>Approve</th>
@@ -66,6 +70,7 @@ const ManageOrders = () => {
                         {
                             orders.map((order) => (
                                 <tr key={order._id}>
+                                    <td>{order.name}</td>
                                     <td>{order.title}</td>
                                     <td>{order.orderStatus}</td>
                                     <td><button onClick={() => handleConfirm(order._id)}> <i class="fas fa-check-circle"></i></button></td>

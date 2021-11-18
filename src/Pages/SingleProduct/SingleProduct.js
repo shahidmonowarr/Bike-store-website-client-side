@@ -10,9 +10,9 @@ const SingleProduct = ({ singleProduct }) => {
                     <img className="w-100 p-2 rounded-3" src={img} alt="" />
                 </div>
                 <div>
-                    <h4>{title}</h4>
+                    <h5>{title}</h5>
                     <p className="p-2">{description.slice(0, 100)}</p>
-                    <h4>Price: {price}<i class="fas fa-dollar-sign"></i></h4>
+                    <h6>Price: {price}<i class="fas fa-dollar-sign"></i></h6>
                     <Link to={`/purchase/${_id}`}>
                         <button className="btn btn-warning text-white">Buy Now <i class="fas fa-angle-double-right"></i></button>
                     </Link>
