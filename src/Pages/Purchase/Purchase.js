@@ -18,7 +18,7 @@ const Purchase = () => {
 
         console.log(data);
 
-        axios.post('http://localhost:5000/orders', data)
+        axios.post('https://nameless-wave-63778.herokuapp.com/orders', data)
             .then(res => {
                 if (res.data.insertedId) {
                     console.log(res.data)
@@ -29,7 +29,7 @@ const Purchase = () => {
     };
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${productId}`)
+        fetch(`https://nameless-wave-63778.herokuapp.com/products/${productId}`)
             .then(res => res.json())
             .then(data => setSingleProduct(data));
     }, [])

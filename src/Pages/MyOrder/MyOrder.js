@@ -8,7 +8,7 @@ const MyOrder = () => {
 
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://nameless-wave-63778.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => {
                 const myOrders = data.filter(singleData => singleData.email === user.email);
@@ -19,7 +19,7 @@ const MyOrder = () => {
     const handleDelete = id => {
         const proceed = window.confirm("Are You sure, You want to delete?");
         if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://nameless-wave-63778.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

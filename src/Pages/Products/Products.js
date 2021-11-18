@@ -4,7 +4,7 @@ import SingleProduct from '../SingleProduct/SingleProduct';
 const Products = () => {
     const [products, setPackages] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://nameless-wave-63778.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setPackages(data));
     }, [])

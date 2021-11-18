@@ -19,7 +19,7 @@ const AddReview = () => {
     const handleReview = e => {
         e.preventDefault();
         const newReview = { displayName: user.displayName, email: user.email, rating, reviewText }
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://nameless-wave-63778.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

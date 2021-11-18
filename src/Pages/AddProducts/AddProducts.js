@@ -9,7 +9,7 @@ const AddProducts = () => {
     const onSubmit = data => {
         console.log(data);
 
-        axios.post('http://localhost:5000/products', data)
+        axios.post('https://nameless-wave-63778.herokuapp.com/products', data)
             .then(res => {
                 console.log(res);
                 if (res.data.insertedId) {
