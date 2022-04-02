@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Row } from 'react-bootstrap';
 import SingleProduct from '../SingleProduct/SingleProduct';
 
 const Products = () => {
@@ -12,7 +13,7 @@ const Products = () => {
         <div className="container" id="demo-products">
             <h6 className="text-danger fw-bold fs-5 mt-5 "><i class="fas fa-long-arrow-alt-right"></i>EXPLORE GREAT bIKES</h6>
             <h2 className="title">OUR COLLECTIONS</h2>
-            <div className="row">
+            <Row>
                 {
                     products.map(singleProduct => <SingleProduct
                         key={singleProduct._id}
@@ -20,7 +21,7 @@ const Products = () => {
                     >
                     </SingleProduct>)
                 }
-            </div>
+            </Row>
         </div>
     );
 };
