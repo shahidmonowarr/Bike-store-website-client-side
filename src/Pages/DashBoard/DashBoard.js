@@ -1,11 +1,6 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    useRouteMatch
+    Link, Route, Switch, useRouteMatch
 } from "react-router-dom";
 import useAuth from '../../contexts/useAuth';
 import AddProducts from '../AddProducts/AddProducts';
@@ -26,27 +21,28 @@ const DashBoard = () => {
                 <div className="col-md-2">
 
                     {admin ? (<div className="my-5">
-                        <Link to={`${url}/manageOrders`} style={{ textDecoration: "none" }}>Manage all Orders</Link>
+                        
+                        <Link className='px-1 btn my-1 rounded-3 btn-dark' to={`${url}/addProducts`} style={{ textDecoration: "none" }}>Add Products</Link>
                         <br />
-                        <Link to={`${url}/addProducts`} style={{ textDecoration: "none" }}>Add Products</Link>
+                        <Link className='px-1 btn my-1 rounded-3 btn-dark' to={`${url}/makeAdmin`} style={{ textDecoration: "none" }}>Make Admin</Link>
                         <br />
-                        <Link to={`${url}/makeAdmin`} style={{ textDecoration: "none" }}>Make Admin</Link>
+                        <Link className='px-1 btn my-1 rounded-3 btn-dark' to={`${url}/manageOrders`} style={{ textDecoration: "none" }}>Manage all Orders</Link>
                         <br />
-                        <Link to={`${url}/manageProducts`} style={{ textDecoration: "none" }}>Manage Products</Link>
+                        <Link className='px-1 btn my-1 rounded-3 btn-dark' to={`${url}/manageProducts`} style={{ textDecoration: "none" }}>Manage Products</Link>
                         <br />
                         {user?.email &&
-                            <Link to="" className="pb-2" style={{ textDecoration: "none" }} onClick={logOut} >Logout</Link>
+                            <Link className='px-1 btn my-1 rounded-3 btn-dark' to="" style={{ textDecoration: "none" }} onClick={logOut} >Logout</Link>
                         }
                     </div>)
                         : (<div className="my-5">
-                            <Link to={`${url}/pay`} style={{ textDecoration: "none" }}>Pay</Link>
+                            <Link className='px-1 btn my-1 rounded-3 btn-dark' to={`${url}/pay`} style={{ textDecoration: "none" }}>Pay</Link>
                             <br />
-                            <Link to={`${url}/myOrder`} style={{ textDecoration: "none" }}>My Orders</Link>
+                            <Link className='px-1 btn my-1 rounded-3 btn-dark' to={`${url}/myOrder`} style={{ textDecoration: "none" }}>My Orders</Link>
                             <br />
-                            <Link to={`${url}/addReview`} style={{ textDecoration: "none" }}>Review</Link>
+                            <Link className='px-1 btn my-1 rounded-3 btn-dark' to={`${url}/addReview`} style={{ textDecoration: "none" }}>Add Review</Link>
                             <br />
                             {user?.email &&
-                                <Link to="" className="pb-2" style={{ textDecoration: "none" }} onClick={logOut} >Logout</Link>
+                                <Link className='px-1 btn my-1 rounded-3 btn-dark' to="" style={{ textDecoration: "none" }} onClick={logOut} >Logout</Link>
                             }
                         </div>)}
 

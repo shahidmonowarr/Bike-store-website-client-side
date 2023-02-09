@@ -6,10 +6,10 @@ const SingleProduct = ({ singleProduct }) => {
     const { _id, title, price, description, img } = singleProduct;
     return (
         <Col className="my-3 text-center" sm={12} md={6} lg={4}>
-        <Card style={{ height: "105%" }} className="mx-1  shadow">
+        <Card style={{ height: "105%" }} className="shadow">
           <div className="text-center">
             <Card.Img
-              style={{ width: "80%", height: "80%" }}
+              style={{ width: "95%", height: "90%" }}
               variant="top"
               src={img}
             />

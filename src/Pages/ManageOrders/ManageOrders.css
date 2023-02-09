@@ -4,6 +4,7 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        height:200vh;
+        height:auto;
+        padding-bottom: 25px;
 
 }

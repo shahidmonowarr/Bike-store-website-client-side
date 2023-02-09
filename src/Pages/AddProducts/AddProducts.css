@@ -13,7 +13,7 @@
 
 .add-product form input{
     border: 3px solid rgb(233, 211, 171);
-    background: transparent;
+    background: wheat;
 }
 .add-product form input::placeholder{
    color: aliceblue;
@@ -21,7 +21,7 @@
 }
 .add-product form textarea{
     border: 3px solid rgb(233, 211, 171);
-    background: transparent;
+    background: wheat;
 }
 
 .add-product form textarea::placeholder{
@@ -31,12 +31,11 @@
 
 .add-product{
     opacity: 0.7;
-    padding-top: 70px;
     background-image: url('/src/images/cover2.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height:120vh ;
+    height:auto ;
 }
 .add-product:hover{
     opacity: 1.0;

@@ -34,17 +34,17 @@ const MakeAdmin = () => {
     return (
         <div className="container">
             <h3 className="text-success my-3 py-2">Make a Admin</h3>
-            <div className="text-center mt-5">
-                <form className="mb-5" onSubmit={handleMakeAdmin}>
+            <div className="mx-auto my-5">
+                <form className="mb-5 " onSubmit={handleMakeAdmin}>
                     <input
                         onBlur={handleAdminEmail}
-                        className="w-50"
+                        className="w-75 form-control"
                         style={{ outline: 'none' }}
                         type="email"
                         placeholder="Email"
                     />
                     <button
-                        className="bg-warning rounded-3"
+                        className="bg-warning form-control w-25 mt-3"
                         type="submit"
                     >Make Admin</button>
                 </form>

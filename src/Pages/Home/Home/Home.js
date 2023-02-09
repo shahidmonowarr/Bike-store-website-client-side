@@ -30,6 +30,9 @@ const Home = () => {
                         </SingleProduct>)
                     }
                 </div>
+                <Link to={"/products"}>
+                        <button className="btn mt-5 btn-warning text-white">View All Products <i class="fas fa-angle-double-right"></i></button>
+                    </Link>
             </div>
             <Review></Review>
             <section className="container offer-section">

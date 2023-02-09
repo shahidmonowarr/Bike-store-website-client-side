@@ -31,7 +31,7 @@ const ManageProducts = () => {
 
         <div className=" manage-order" >
             <div className="container">
-                <h1 className="text-dark fw-bold pt-5 pb-3 fs-1">Manage Product</h1>
+                <h1 className="text-dark fw-bold pb-3 fs-1">Manage Product</h1>
                 <Table striped bordered hover variant="dark">
                     <thead>
                         <tr className="bg-dark text-white">

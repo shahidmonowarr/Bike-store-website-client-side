@@ -1,18 +1,19 @@
-.my-order-page{
-    padding-top: 70px;
-    background-image: url('/src/images/cover4.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height:90vh;
+.my-order-page {
+  padding-top: 70px;
+  background-image: url("/src/images/cover4.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: auto;
+  padding-bottom: 25px;
 }
-.my-order{
-    border: 2px;
-border-radius: 20px;
-transition: 0.5s;
-cursor: pointer;
+.my-order {
+  border: 2px;
+  border-radius: 20px;
+  transition: 0.5s;
+  cursor: pointer;
 }
 
-.my-order:hover{
-    box-shadow: 2px 5px 10px rgb(70, 64, 64);
+.my-order:hover {
+  box-shadow: 2px 5px 10px rgb(70, 64, 64);
 }
