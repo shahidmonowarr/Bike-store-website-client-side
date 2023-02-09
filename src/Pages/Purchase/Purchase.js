@@ -1,9 +1,9 @@
-import './Purchase.css';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
 import useAuth from '../../contexts/useAuth';
+import './Purchase.css';
 
 const Purchase = () => {
     const { productId, } = useParams();
@@ -18,7 +18,7 @@ const Purchase = () => {
 
         console.log(data);
 
-        axios.post('https://nameless-wave-63778.herokuapp.com/orders', data)
+        axios.post('https://bike-store-website-server.onrender.com/orders', data)
             .then(res => {
                 if (res.data.insertedId) {
                     console.log(res.data)
@@ -29,7 +29,7 @@ const Purchase = () => {
     };
 
     useEffect(() => {
-        fetch(`https://nameless-wave-63778.herokuapp.com/products/${productId}`)
+        fetch(`https://bike-store-website-server.onrender.com/products/${productId}`)
             .then(res => res.json())
             .then(data => setSingleProduct(data));
     }, [])

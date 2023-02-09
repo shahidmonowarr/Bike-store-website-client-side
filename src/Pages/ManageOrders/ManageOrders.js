@@ -6,7 +6,7 @@ const ManageOrders = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch('https://nameless-wave-63778.herokuapp.com/orders')
+        fetch('https://bike-store-website-server.onrender.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data));
     }, [orders]);
@@ -15,7 +15,7 @@ const ManageOrders = () => {
         const matchedOrder = orders.filter(order => order._id === id);
         matchedOrder[0].orderStatus = 'Confirmed';
 
-        fetch(`https://nameless-wave-63778.herokuapp.com/orders/${id}`, {
+        fetch(`https://bike-store-website-server.onrender.com/orders/${id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
@@ -35,7 +35,7 @@ const ManageOrders = () => {
     const handleDelete = id => {
         const proceed = window.confirm("Are You sure, You want to delete?");
         if (proceed) {
-            const url = `https://nameless-wave-63778.herokuapp.com/orders/${id}`;
+            const url = `https://bike-store-website-server.onrender.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

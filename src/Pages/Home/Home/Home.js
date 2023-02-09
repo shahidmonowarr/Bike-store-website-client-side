@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Brands from '../../Brands/Brands';
-import Products from '../../Products/Products';
 import Review from '../../Review/Review';
 import SingleProduct from '../../SingleProduct/SingleProduct';
 import Banner from '../Banner/Banner';
@@ -11,7 +10,7 @@ import './Home.css';
 const Home = () => {
     const [products, setPackages] = useState([]);
     useEffect(() => {
-        fetch('https://nameless-wave-63778.herokuapp.com/products')
+        fetch('https://bike-store-website-server.onrender.com/products')
             .then(res => res.json())
             .then(data => setPackages(data));
     }, [])

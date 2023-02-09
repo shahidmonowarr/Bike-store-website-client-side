@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
-import './AddProducts.css';
 import { useForm } from "react-hook-form";
+import './AddProducts.css';
 
 const AddProducts = () => {
     const { register, handleSubmit, reset } = useForm();
@@ -9,7 +9,7 @@ const AddProducts = () => {
     const onSubmit = data => {
         console.log(data);
 
-        axios.post('https://nameless-wave-63778.herokuapp.com/products', data)
+        axios.post('https://bike-store-website-server.onrender.com/products', data)
             .then(res => {
                 console.log(res);
                 if (res.data.insertedId) {

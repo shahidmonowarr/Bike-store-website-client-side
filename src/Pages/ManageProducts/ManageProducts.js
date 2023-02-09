@@ -5,13 +5,13 @@ const ManageProducts = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('https://nameless-wave-63778.herokuapp.com/products/')
+        fetch('https://bike-store-website-server.onrender.com/products/')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, []);
 
     const handleDelete = id => {
-        const url = `https://nameless-wave-63778.herokuapp.com/products/${id}`;
+        const url = `https://bike-store-website-server.onrender.com/products/${id}`;
         fetch(url, {
             method: 'DELETE'
         })

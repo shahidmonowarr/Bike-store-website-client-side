@@ -1,4 +1,3 @@
-import { Alert } from 'bootstrap';
 import React, { useState } from 'react';
 
 const MakeAdmin = () => {
@@ -13,7 +12,7 @@ const MakeAdmin = () => {
     const handleMakeAdmin = e => {
         const user = { email };
 
-        fetch(`https://nameless-wave-63778.herokuapp.com/users/admin`, {
+        fetch(`https://bike-store-website-server.onrender.com/users/admin`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

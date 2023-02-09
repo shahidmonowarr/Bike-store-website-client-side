@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import useAuth from '../../contexts/useAuth';
-import './MyOrder.css'
+import './MyOrder.css';
 
 const MyOrder = () => {
     const { user } = useAuth();
 
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch('https://nameless-wave-63778.herokuapp.com/orders')
+        fetch('https://bike-store-website-server.onrender.com/orders')
             .then(res => res.json())
             .then(data => {
                 const myOrders = data.filter(singleData => singleData.email === user.email);
@@ -19,7 +19,7 @@ const MyOrder = () => {
     const handleDelete = id => {
         const proceed = window.confirm("Are You sure, You want to delete?");
         if (proceed) {
-            const url = `https://nameless-wave-63778.herokuapp.com/orders/${id}`;
+            const url = `https://bike-store-website-server.onrender.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

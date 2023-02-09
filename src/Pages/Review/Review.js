@@ -6,7 +6,7 @@ const Review = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch('https://nameless-wave-63778.herokuapp.com/reviews')
+        fetch('https://bike-store-website-server.onrender.com/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, []);
