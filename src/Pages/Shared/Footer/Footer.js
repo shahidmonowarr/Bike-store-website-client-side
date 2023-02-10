@@ -1,8 +1,8 @@
 import {
-    faFacebookSquare,
-    faInstagramSquare,
-    faTwitterSquare,
-    faYoutube
+  faFacebookSquare,
+  faInstagramSquare,
+  faTwitterSquare,
+  faYoutube
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
@@ -41,20 +41,20 @@ const Footer = () => {
                 <div className="phone d-flex align-items-center justify-content-center mt-3">
                   <div>
                     <input
-                      className="px-5 mx-2 mb-1"
+                      className="px-5 mx-2 mb-1 form-control"
                       placeholder="Name"
                       type="email"
                       name=""
                       id=""
                     />
                     <input
-                      className="px-5 mx-2"
+                      className="px-5 mx-2 form-control"
                       placeholder="Email"
                       type="email"
                       name=""
                       id=""
                     />
-                    <button className="px-5 my-2 bg-success rounded-3 text-white">
+                    <button className="px-5 my-2 btn-success rounded-3 text-white">
                       SUBSCRIBE NOW
                     </button>
                   </div>
