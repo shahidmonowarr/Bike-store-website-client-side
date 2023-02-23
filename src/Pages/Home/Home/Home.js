@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Brands from '../../Brands/Brands';
 import Review from '../../Review/Review';
@@ -21,7 +21,14 @@ const Home = () => {
             <div className="container" id="demo-products">
 
                 <h2 className="title">POPULAR <i class="fas fa-biking"></i> BIKES <i class="fas fa-biking"></i></h2>
-                <div className="row">
+                {products.length === 0 ? (
+                    <div className="">
+                        <h2><Spinner className='mt-5' animation="border" variant="warning" /></h2>
+                        <h3 className="text-warning">Loading...</h3>
+                    </div>
+                ):
+                (
+                    <div className="row">
                     {
                         products.slice(0, 6).map(singleProduct => <SingleProduct
                             key={singleProduct._id}
@@ -30,6 +37,7 @@ const Home = () => {
                         </SingleProduct>)
                     }
                 </div>
+                )}
                 <Link to={"/products"}>
                         <button className="btn mt-5 btn-warning text-white">View All Products <i class="fas fa-angle-double-right"></i></button>
                     </Link>
