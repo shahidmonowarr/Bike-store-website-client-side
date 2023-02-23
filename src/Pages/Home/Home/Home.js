@@ -42,6 +42,7 @@ const Home = () => {
                         <button className="btn mt-5 btn-warning text-white">View All Products <i class="fas fa-angle-double-right"></i></button>
                     </Link>
             </div>
+            <Brands></Brands>
             <Review></Review>
             <section className="container offer-section">
                 <h6 className="text-white fw-bold fs-5 pt-5 ">HOLIDAY PACKAGE OFFER</h6>
@@ -51,7 +52,6 @@ const Home = () => {
                     <Button className="input-button">SignUp Now</Button>
                 </Link>
             </section>
-            <Brands></Brands>
         </div>
     );
 };

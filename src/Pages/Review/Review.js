@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import customer from "../../images/customer.png";
+import "./Review.css";
 
 const Review = () => {
   const [reviews, setReviews] = useState([]);
@@ -39,30 +40,14 @@ const Review = () => {
           {reviews.map((review) => (
             <div
               key={review._id}
-              style={{
-                background: "linear-gradient(90deg, #4b6cb7 0%, #182848 100%)",
-                color: "white",
-                width: "50%",
-                margin: "auto",
-                padding: "15px",
-              }}
               className="mb-5"
             >
               <div
-                style={{
-                  background:
-                    "linear-gradient(90deg, #4b6cb7 0%, #182848 100%)",
-                  color: "white",
-                  width: "50%",
-                  height: "35vh",
-                  margin: "auto",
-                  padding: "15px",
-                }}
-                className=""
+                className=" review-sec"
               >
                 <img
-                  style={{ width: "10%" }}
-                  className="img-fluid mx-auto pb-3"
+                  style={{ width: "25%" }}
+                  className="img-fluid mx-auto pb-2"
                   src={customer}
                   alt=""
                 />
